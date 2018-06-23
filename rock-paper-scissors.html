@@ -6,9 +6,80 @@
 <body>
 
 <script type="text/javascript">
-	
 
 	
+	function computerPlay() {
+		let random = Math.floor(Math.random()*3 +1) ;
+
+		if (random == 1) {
+			return "rock";
+		}
+
+		else if (random == 2) {
+			return "paper";
+		}
+
+		else {
+			return "scissors";
+		}
+	}
+
+
+
+let playerWeapon = prompt("Choose your weapon:");
+let playerSelection = playerWeapon.toLowerCase();
+let computerSelection = computerPlay();
+
+	console.log("Player: " + playerSelection);
+
+	// Here I was mistakenly running the computerPlay() function again, so I was logging another run of the function instead of taking the result of the first run:
+
+// console.log("CPU (false): " + computerPlay());
+
+	console.log("CPU: " + computerSelection);
+
+
+	function playRound(playerSelection, computerSelection) {
+		if (computerSelection == playerSelection) {
+			return "It's a tie!";
+		}
+
+		else if (computerSelection == "rock") {
+			if (playerSelection == "paper") {
+				return "Paper beats rock, you win!";
+			}
+
+			else if (playerSelection == "scissors") {
+				return "Rock beats scissors, you lose!";
+			}
+		}
+
+		else if (computerSelection == "paper") {
+			if (playerSelection == "rock") {
+				return "Paper beats rock, you lose!";
+			}
+
+			else if (playerSelection == "scissors") {
+				return "Scissors beats paper, you win!";
+			}
+		}
+
+		else if (computerSelection == "scissors") {
+			if (playerSelection == "rock") {
+				return "Rock beats scissors, you win!";
+			}
+
+			else if (playerSelection == "paper") {
+				return "Scissors beats paper, you lose!";
+			}
+		}
+	}
+
+
+console.log(playRound(playerSelection, computerSelection))
+
+
+
 </script>
 
 </body>
