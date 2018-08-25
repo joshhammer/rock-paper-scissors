@@ -9,9 +9,15 @@
 
 	<script type="text/javascript">
 
+
+
 let random;
+let result;
 let computerSelection;
 let playerSelection = "Paper";
+let playerScore = 0;
+let computerScore = 0;
+let ties = 0;
 
 
 		
@@ -33,7 +39,6 @@ function computerPlay() {
 
 }
 
-computerSelection = computerPlay();
 
 
 
@@ -43,40 +48,79 @@ function playRound(computerSelection, playerSelection) {
 
 
 	if(computerSelection == playerSelection) {
-		return "Tie!";
+		result = "Tie!";
 	}
 
 	else if (computerSelection == "Rock" && playerSelection == "Paper") {
-		return "Player wins.";
+		result = "Player wins.";
 	}
 
 	else if (computerSelection == "Rock" && playerSelection == "Scissors") {
-		return "CPU wins.";
+		result = "CPU wins.";
 	}
 
 	else if (computerSelection == "Scissors" && playerSelection == "Paper") {
-		return "CPU wins.";
+		result = "CPU wins.";
 	}
 
 	else if (computerSelection == "Scissors" && playerSelection == "Rock") {
-		return "Player wins.";
+		result = "Player wins.";
 	}
 
 	else if (computerSelection == "Paper" && playerSelection == "Rock") {
-		return "CPU wins.";
+		result = "CPU wins.";
 	}
 
 	else if (computerSelection == "Paper" && playerSelection == "Scissors") {
-		return "Player wins.";
+		result = "Player wins.";
+	}
+
+
+	if(result == "Player wins.") {
+		playerScore++;
+	}
+
+	else if(result == "CPU wins.") {
+		computerScore++;
+	}
+
+	else {
+		ties++;
 	}
 }
 
-console.log("CPU : "+computerSelection);
-console.log("Player: "+playerSelection);
-console.log("Result of first round: "+playRound(computerSelection, playerSelection));
 
 
 
+function game() {
+
+	computerSelection = computerPlay();
+
+	while(playerScore < 5 || computerScore < 5) {
+
+		computerSelection = computerPlay();
+		playRound(computerSelection, playerSelection);
+
+		console.log("Player: "+playerSelection);
+		console.log("CPU: "+computerSelection);
+		console.log(result)
+		console.log("Player Score: "+playerScore);
+		console.log("CPU Score: "+computerScore);
+		console.log("Ties: "+ties);
+		console.log("");
+
+		if(playerScore == 5) {
+		return "Player wins 5 rounds. Congratulations!"
+		} 
+
+		else if(computerScore == 5) {
+		return "CPU wins 5 rounds. You lose!"
+		}
+	}
+
+}
+
+console.log(game());
 
 
 
