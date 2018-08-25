@@ -8,11 +8,78 @@
 	<h2>Rock, Paper, Scissors Version 2.0</h2>
 
 	<script type="text/javascript">
+
+let random;
+let computerSelection;
+let playerSelection = "Paper";
+
+
 		
+function computerPlay() {
+	let random = Math.floor(Math.random()*3 +1);
+
+	if (random === 1) {
+		return "Rock";
+	}
+
+	else if (random === 2) {
+		return "Paper";
+	}
+
+	else {
+		return "Scissors";
+	}
+
+
+}
+
+computerSelection = computerPlay();
 
 
 
-		
+
+
+function playRound(computerSelection, playerSelection) {
+
+
+	if(computerSelection == playerSelection) {
+		return "Tie!";
+	}
+
+	else if (computerSelection == "Rock" && playerSelection == "Paper") {
+		return "Player wins.";
+	}
+
+	else if (computerSelection == "Rock" && playerSelection == "Scissors") {
+		return "CPU wins.";
+	}
+
+	else if (computerSelection == "Scissors" && playerSelection == "Paper") {
+		return "CPU wins.";
+	}
+
+	else if (computerSelection == "Scissors" && playerSelection == "Rock") {
+		return "Player wins.";
+	}
+
+	else if (computerSelection == "Paper" && playerSelection == "Rock") {
+		return "CPU wins.";
+	}
+
+	else if (computerSelection == "Paper" && playerSelection == "Scissors") {
+		return "Player wins.";
+	}
+}
+
+console.log("CPU : "+computerSelection);
+console.log("Player: "+playerSelection);
+console.log("Result of first round: "+playRound(computerSelection, playerSelection));
+
+
+
+
+
+
 	</script>
 
 </body>
