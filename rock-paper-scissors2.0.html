@@ -78,7 +78,6 @@ function playRound(computerSelection, playerSelection) {
 
 	if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
 		result = "Invalid selection";
-		alert("Not a valid selection! Choose again.")
 	}
 
 
@@ -100,45 +99,68 @@ function playRound(computerSelection, playerSelection) {
 
 function game() {
 
-	playerInput = prompt("Rock, Paper or Scissors? Choose your weapon:")
+	playerInput = prompt("Rock, Paper or Scissors? Choose your weapon:");
+
+	while (playerInput == null) {
+		playerInput = prompt("You cannot escape! Choose your weapon, coward!:")
+	}
+
+	while (playerInput === "") {
+		alert("Well, you have to choose something...");
+		playerInput = prompt("Rock, Paper or Scissors? Choose your weapon:")
+	}
+
 	playerSelection = playerInput.toLowerCase();
 	computerSelection = computerPlay();
+
 	playRound(computerSelection, playerSelection);
 
-	while(playerScore < 5 || computerScore < 5) {
 
+	while((playerScore < 5 || computerScore < 5) && playerInput !== "")  {
 
 		console.log("Player: "+playerSelection);
 		console.log("CPU: "+computerSelection);
-		console.log(result)
+		console.log(result);
 		console.log("Player Score: "+playerScore);
 		console.log("CPU Score: "+computerScore);
 		console.log("Ties: "+ties);
 		console.log("");
 
 		playerInput = prompt("Rock, Paper or Scissors? Choose again:");
+
+		while (playerInput == null) {
+			playerInput = prompt("You cannot escape! Choose your weapon, coward!:")
+		}
+
+		while (playerInput === "") {
+			alert("Well, you have to choose something...");
+			playerInput = prompt("Rock, Paper or Scissors? Choose your weapon:")
+	}
+
 		playerSelection = playerInput.toLowerCase();
 		computerSelection = computerPlay();
 		playRound(computerSelection, playerSelection);
 
 
 		if(playerScore == 5) {
-		console.log("Player Score: "+playerScore);
-		console.log("CPU Score: "+computerScore);
-		return "PLAYER WINS 5 ROUNDS. CONGRATULATIONS!"
+			console.log(result);
+			console.log("Player Score: "+playerScore);
+			console.log("CPU Score: "+computerScore);
+			return "PLAYER WINS 5 ROUNDS. CONGRATULATIONS!"
 		} 
 
 		else if(computerScore == 5) {
-		console.log("Player Score: "+playerScore);
-		console.log("CPU Score: "+computerScore);
-		return "CPU WINS 5 ROUNDS. YOU LOSE!"
+			console.log(result);	
+			console.log("Player Score: "+playerScore);
+			console.log("CPU Score: "+computerScore);
+			return "CPU WINS 5 ROUNDS. YOU LOSE!"
 		}
 
 		else if (result == "Invalid selection") {
-		playerInput = prompt("Rock, Paper or Scissors? Choose again:");
-		playerSelection = playerInput.toLowerCase();
-		computerSelection = computerPlay();
-		playRound(computerSelection, playerSelection);
+			playerInput = prompt("Rock, Paper or Scissors? Choose again:");
+			playerSelection = playerInput.toLowerCase();
+			computerSelection = computerPlay();
+			playRound(computerSelection, playerSelection);
 		}
 	}
 
