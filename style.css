@@ -5,6 +5,8 @@
 
 body {
     background-color: white;
+    width: 80%;
+    margin: 0 auto;
 }
 
 h1 {
@@ -35,5 +37,6 @@ button:hover {
 }
 
 #startbtn {
-    margin: 0 100px 0 50px;
+    width: 150px;
+    height: 100%;
 }
