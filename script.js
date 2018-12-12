@@ -29,7 +29,7 @@ rockbtn.addEventListener("click", function () {
     playRound(computerSelection, playerSelection);
     cpuDisplay.textContent = computerScore;
     playerDisplay.textContent = playerScore;
-    displayText.textContent = `You chose ${playerSelection}, CPU chose ${computerSelection}. ${result} `
+    displayText.textContent = `You chose ${playerSelection.toUpperCase()}, CPU chose ${computerSelection.toUpperCase()}. ${result.toUpperCase()} `
 
     checkForWinner();
 });
@@ -40,7 +40,7 @@ paperbtn.addEventListener("click", function () {
     playRound(computerSelection, playerSelection);
     cpuDisplay.textContent = computerScore;
     playerDisplay.textContent = playerScore;
-    displayText.textContent = `You chose ${playerSelection}, CPU chose ${computerSelection}. ${result} `
+    displayText.textContent = `You chose ${playerSelection.toUpperCase()}, CPU chose ${computerSelection.toUpperCase()}. ${result.toUpperCase()} `
 
     checkForWinner();
 });
@@ -51,7 +51,7 @@ scissorsbtn.addEventListener("click", function () {
     playRound(computerSelection, playerSelection);
     cpuDisplay.textContent = computerScore;
     playerDisplay.textContent = playerScore;
-    displayText.textContent = `You chose ${playerSelection}, CPU chose ${computerSelection}. ${result} `
+    displayText.textContent = `You chose ${playerSelection.toUpperCase()}, CPU chose ${computerSelection.toUpperCase()}. ${result.toUpperCase()} `
 
     checkForWinner();
 });
@@ -120,9 +120,9 @@ function checkForWinner() {
     else if (computerScore == 5) {
         displayText.textContent = "CPU WINS 5 ROUNDS. YOU LOSE!";
         startButton.textContent = "REPLAY?"
-        rockbtn.style.display = "hidden";
-        paperbtn.style.display = "hidden";
-        scissorsbtn.style.display = "hidden";
+        rockbtn.style.visibility = "hidden";
+        paperbtn.style.visibility = "hidden";
+        scissorsbtn.style.visibility = "hidden";
     }
 
 }
