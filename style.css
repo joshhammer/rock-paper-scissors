@@ -5,6 +5,12 @@
     font-weight: 200;
     color: white;
     text-transform: uppercase;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
 }
 
 
@@ -41,6 +47,7 @@ button {
     height: 50px;
     width: 10%;
     margin: 10px 11.45%;
+    transition: background 0.5s;
 }
 
 button:hover {
@@ -89,4 +96,10 @@ h3 {
     font-size: 2em;
     text-align: center;
     margin: 20px 0;
+}
+
+.hidebtn {
+    background-color: steelblue;
+    color: steelblue;
+    box-shadow: none;
 }

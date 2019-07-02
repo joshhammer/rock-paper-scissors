@@ -113,16 +113,17 @@ function checkForWinner() {
     if (playerScore == 5) {
         displayText.textContent = "PLAYER WINS 5 ROUNDS. CONGRATULATIONS!";
         startButton.textContent = "REPLAY?"
-        rockbtn.style.visibility = "hidden";
-        paperbtn.style.visibility = "hidden";
-        scissorsbtn.style.visibility = "hidden";
+        rockbtn.classList.add("hidebtn")
+        paperbtn.classList.add("hidebtn")
+        scissorsbtn.classList.add("hidebtn")
+
     }
     else if (computerScore == 5) {
         displayText.textContent = "CPU WINS 5 ROUNDS. YOU LOSE!";
         startButton.textContent = "REPLAY?"
-        rockbtn.style.visibility = "hidden";
-        paperbtn.style.visibility = "hidden";
-        scissorsbtn.style.visibility = "hidden";
+        rockbtn.classList.add("hidebtn")
+        paperbtn.classList.add("hidebtn")
+        scissorsbtn.classList.add("hidebtn")
     }
 
 }
@@ -135,7 +136,8 @@ function resetGame(){
     playerDisplay.textContent = playerScore;
     startButton.textContent = "New Game";
     displayText.textContent = "Click Rock, Paper or Scissors";
-    rockbtn.style.visibility = "visible";
-    paperbtn.style.visibility = "visible";
-    scissorsbtn.style.visibility = "visible";
+    rockbtn.classList.remove("hidebtn");
+    paperbtn.classList.remove("hidebtn");
+    scissorsbtn.classList.remove("hidebtn");
+
 }
