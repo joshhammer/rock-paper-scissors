@@ -17,6 +17,7 @@ html {
 body {
     background-color: rgb(42, 13, 66);
     width: 50%;
+    min-width: 500px;
     height: 100%;
     margin: 0 auto;
 }
@@ -45,8 +46,9 @@ button {
     border: none;
     outline: none;
     height: 50px;
-    width: 10%;
-    margin: 10px 11.45%;
+    width: 20%;
+    min-width: 80px;
+    margin: 10px 0;
     transition: background 0.5s;
 }
 
@@ -66,12 +68,15 @@ button:active {
 }
 
 #btnStripe {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     margin: 20px 0;
 }
 
 #startbtn {
     display: block;
-    width: 150px;
+    width: 200px;
     margin: 10px auto;
 }
 
@@ -96,10 +101,4 @@ h3 {
     font-size: 2em;
     text-align: center;
     margin: 20px 0;
-}
-
-.hidebtn {
-    background-color: steelblue;
-    color: steelblue;
-    box-shadow: none;
 }

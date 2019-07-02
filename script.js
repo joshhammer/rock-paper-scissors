@@ -110,20 +110,20 @@ function playRound(computerSelection, playerSelection) {
 
 // this function checks if one of the players reached 5 points and resets the game
 function checkForWinner() {
-    if (playerScore == 5) {
+    if (playerScore === 5) {
         displayText.textContent = "PLAYER WINS 5 ROUNDS. CONGRATULATIONS!";
         startButton.textContent = "REPLAY?"
-        rockbtn.classList.add("hidebtn")
-        paperbtn.classList.add("hidebtn")
-        scissorsbtn.classList.add("hidebtn")
+        rockbtn.style.visibility = 'hidden'
+        paperbtn.style.visibility = 'hidden'
+        scissorsbtn.style.visibility = 'hidden'
 
     }
-    else if (computerScore == 5) {
+    else if (computerScore === 5) {
         displayText.textContent = "CPU WINS 5 ROUNDS. YOU LOSE!";
         startButton.textContent = "REPLAY?"
-        rockbtn.classList.add("hidebtn")
-        paperbtn.classList.add("hidebtn")
-        scissorsbtn.classList.add("hidebtn")
+        rockbtn.style.visibility = 'hidden'
+        paperbtn.style.visibility = 'hidden'
+        scissorsbtn.style.visibility = 'hidden'
     }
 
 }
@@ -136,8 +136,7 @@ function resetGame(){
     playerDisplay.textContent = playerScore;
     startButton.textContent = "New Game";
     displayText.textContent = "Click Rock, Paper or Scissors";
-    rockbtn.classList.remove("hidebtn");
-    paperbtn.classList.remove("hidebtn");
-    scissorsbtn.classList.remove("hidebtn");
-
+    paperbtn.style.visibility = 'visible'
+    rockbtn.style.visibility = 'visible'
+    scissorsbtn.style.visibility = 'visible'
 }
